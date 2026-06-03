@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Shop Marias Handbag - Explore our curated collection of luxury handbags: totes, clutches, shoulder bags, and more. Made in USA.">
+  <meta name="keywords" content="shop luxury handbags, women purses, designer bags, tote bags, clutches, shoulder bags, USA">
+  <meta name="author" content="Marias Handbag">
+  <title>Marias Handbag | Shop Luxury Handbags</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👜</text></svg>">
+  <!-- Bootstrap 5 + Icons + Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FFFFFF;
+      color: #2B2A28;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, .logo-font {
+      font-family: 'Playfair Display', serif;
+    }
+    :root {
+      --dust-rose: #D4A5A5;
+      --charcoal: #2F2E2C;
+      --warm-cream: #FBF7F2;
+      --olive: #8B7D6B;
+    }
+    /* Navbar (identical to homepage) */
+    .navbar {
+      background: rgba(255,255,255,0.96);
+      transition: all 0.3s;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+    .navbar.scrolled {
+      background: white;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+      padding: 0.5rem 0;
+    }
+    .navbar-brand {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #2F2E2C !important;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: #2F2E2C !important;
+      margin: 0 0.5rem;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: #D4A5A5 !important;
+    }
+    .cart-icon {
+      position: relative;
+      font-size: 1.2rem;
+    }
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -12px;
+      background: #D4A5A5;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Shop hero */
+    .shop-hero {
+      background: linear-gradient(115deg, #FDF9F5 0%, #F4EFEA 100%);
+      padding: 130px 0 60px;
+      margin-top: 68px;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: #8B7D6B;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+    /* Product cards */
+    .product-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #F0EBE5;
+      height: 100%;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+    }
+    .product-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+    .product-card:hover .product-img {
+      transform: scale(1.02);
+    }
+    .badge-custom {
+      background: #D4A5A5;
+      color: #2F2E2C;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 40px;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+    }
+    .btn-add {
+      background: #F4EFEA;
+      border: none;
+      border-radius: 40px;
+      padding: 10px;
+      font-weight: 500;
+      transition: 0.2s;
+      width: 100%;
+    }
+    .btn-add:hover {
+      background: #D4A5A5;
+      color: white;
+    }
+    .footer-custom {
+      background: #1E1C1A;
+      color: #CFC9C4;
+    }
+    .scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #D4A5A5;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 99;
+      border: none;
+    }
+    .scroll-top.show {
+      opacity: 1;
+    }
+    .fade-scroll {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.7s;
+    }
+    .fade-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      .section-title { font-size: 1.9rem; }
+      .shop-hero { padding: 100px 0 40px; }
+      .product-img { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar (same as other pages) -->
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/index.html">Marias Handbag</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-2">
+        <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link cart-icon" href="#" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cartCountBadge" class="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Shop Page Hero -->
+<section class="shop-hero">
+  <div class="container">
+    <div class="fade-scroll">
+      <span class="section-sub">Our Collection</span>
+      <h1 class="display-5 fw-bold">Timeless Designs,<br>Exceptional Craftsmanship</h1>
+      <p class="lead mx-auto" style="max-width: 650px;">Explore our curated selection of 12 luxury handbags — each piece embodies the WO standard of elegance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Products Grid (12 products) -->
+<section class="container py-5">
+  <div class="row g-4" id="productsGrid">
+    <!-- Product 1 - Madison Tote -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <span class="badge-custom">New</span>
+        <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=600" class="product-img" alt="Madison Leather Tote" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Madison Tote</h5>
+          <p class="text-secondary mb-2">$495</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Madison Tote" data-price="495">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 2 - Athena Clutch -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <span class="badge-custom" style="background:#8B7D6B;">Sale</span>
+        <img src="https://images.unsplash.com/photo-1761646238287-3a278ecc0c86?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img" alt="Athena Clutch" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Athena Clutch</h5>
+          <p class="text-secondary mb-2">$290</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Athena Clutch" data-price="290">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 3 - Serena Shoulder Bag -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <img src="https://images.unsplash.com/photo-1544511196-1646449a253b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img" alt="Serena Shoulder Bag" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Serena Shoulder</h5>
+          <p class="text-secondary mb-2">$425</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Serena Shoulder" data-price="425">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 4 - Opulent Purse -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <span class="badge-custom">Limited</span>
+        <img src="https://images.unsplash.com/photo-1761646238279-30de81702a97?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img" alt="Opulent Purse" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Opulent Purse</h5>
+          <p class="text-secondary mb-2">$650</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Opulent Purse" data-price="650">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 5 - Brooklyn Crossbody -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <img src="https://images.unsplash.com/photo-1760624295064-2de890f64524?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img" alt="Brooklyn Crossbody" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Brooklyn Crossbody</h5>
+          <p class="text-secondary mb-2">$375</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Brooklyn Crossbody" data-price="375">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 6 - Savannah Satchel -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <span class="badge-custom">New</span>
+        <img src="https://images.unsplash.com/photo-1761646238176-b480909e6ba6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img" alt="Savannah Satchel" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Savannah Satchel</h5>
+          <p class="text-secondary mb-2">$520</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Savannah Satchel" data-price="520">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 7 - Monroe Bucket Bag -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <img src="https://images.unsplash.com/photo-1761646238914-2dad041491e2?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img" alt="Monroe Bucket Bag" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Monroe Bucket</h5>
+          <p class="text-secondary mb-2">$470</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Monroe Bucket" data-price="470">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 8 - Clementine Wristlet -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <span class="badge-custom" style="background:#8B7D6B;">Sale</span>
+        <img src="https://images.unsplash.com/photo-1517612228538-cefdbc2c01e7?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img" alt="Clementine Wristlet" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Clementine Wristlet</h5>
+          <p class="text-secondary mb-2">$195</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Clementine Wristlet" data-price="195">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 9 - Winslow Hobo -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <img src="https://images.unsplash.com/photo-1589731119540-c4586781dae1?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img" alt="Winslow Hobo" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Winslow Hobo</h5>
+          <p class="text-secondary mb-2">$580</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Winslow Hobo" data-price="580">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 10 - Ellington Top Handle -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <span class="badge-custom">Limited</span>
+        <img src="https://images.unsplash.com/photo-1751522917613-68281b131e45?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img" alt="Ellington Top Handle" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Ellington Top Handle</h5>
+          <p class="text-secondary mb-2">$710</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Ellington Top Handle" data-price="710">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 11 - Pippa Mini Bag -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <img src="https://images.unsplash.com/photo-1751522937993-46b83342398b?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img" alt="Pippa Mini Bag" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Pippa Mini</h5>
+          <p class="text-secondary mb-2">$340</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Pippa Mini" data-price="340">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Product 12 - Sterling Evening Bag -->
+    <div class="col-md-6 col-lg-3 fade-scroll">
+      <div class="product-card position-relative">
+        <span class="badge-custom">New</span>
+        <img src="https://images.unsplash.com/photo-1691480288782-142b953cf664?q=80&w=2500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img" alt="Sterling Evening Bag" loading="lazy">
+        <div class="p-3">
+          <h5 class="fw-semibold">Sterling Evening</h5>
+          <p class="text-secondary mb-2">$460</p>
+          <button class="btn-add add-to-cart-trigger" data-name="Sterling Evening" data-price="460">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal (appears on Add to Cart click) -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius: 28px; border: none;">
+      <div class="modal-body text-center p-5">
+        <i class="fas fa-tools" style="font-size: 3rem; color: #D4A5A5; margin-bottom: 1rem;"></i>
+        <h4 class="fw-semibold">Temporarily Unavailable</h4>
+        <p class="mt-3">Your order cannot be placed at the moment due to website updates. Our full checkout experience will be back shortly. Thank you for your patience!</p>
+        <button class="btn btn-dark-custom mt-2" data-bs-dismiss="modal" style="background:#2F2E2C; border-radius:40px; padding: 8px 28px;color:white;">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer (exactly same as homepage) -->
+<footer class="footer-custom pt-5 pb-3">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><h4 class="text-white">Marias Handbag</h4><p>Luxury handbags crafted with soul. Atlanta, Georgia flagship atelier.</p><div><i class="fab fa-instagram me-3 fs-5"></i><i class="fab fa-facebook me-3 fs-5"></i><i class="fab fa-pinterest me-3 fs-5"></i></div></div>
+      <div class="col-md-2"><h6>Policies</h6><ul class="list-unstyled"><li><a href="/privacy.html" class="text-white-50">Privacy Policy</a></li><li><a href="/terms.html" class="text-white-50">Terms & Conditions</a></li><li><a href="/refund.html" class="text-white-50">Refund Policy</a></li><li><a href="/shipping.html" class="text-white-50">Shipping Policy</a></li></ul></div>
+      <div class="col-md-3"><h6>Contact</h6><p><i class="fas fa-map-marker-alt me-2"></i> 212 Buckhead Ave, Atlanta, GA 30305</p><p><i class="fas fa-phone-alt me-2"></i> +1 (470) 555-2345</p><p><i class="fas fa-envelope me-2"></i> support@mariashandbag.com</p></div>
+      <div class="col-md-3"><h6>Hours</h6><p>Mon-Fri: 10AM–7PM EST<br>Sat: 11AM–5PM</p></div>
+    </div>
+    <hr class="bg-secondary mt-4"><p class="text-center small mb-0">© 2025 Marias Handbag — American Luxury House. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Cart Offcanvas (preserved for cart icon but modal overrides add-to-cart) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar">
+  <div class="offcanvas-header"><h5>Shopping Bag</h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
+  <div class="offcanvas-body"><div id="cartItemsSidebar"></div><div class="mt-3 fw-bold text-end">Total: $<span id="cartTotalSidebar">0</span></div></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Cart system (kept for cart count display, but add-to-cart shows modal instead)
+  let cart = JSON.parse(localStorage.getItem('wo_cart')) || [];
+  function updateCartUI() {
+    const badge = document.getElementById('cartCountBadge');
+    const sidebarContainer = document.getElementById('cartItemsSidebar');
+    const totalSpan = document.getElementById('cartTotalSidebar');
+    let totalItems = 0, totalPrice = 0;
+    if(sidebarContainer) {
+      sidebarContainer.innerHTML = '';
+      if(cart.length === 0) sidebarContainer.innerHTML = '<p class="text-muted">Your cart is empty.</p>';
+      cart.forEach((item, idx) => {
+        totalItems += item.qty;
+        totalPrice += item.price * item.qty;
+        const div = document.createElement('div');
+        div.className = 'd-flex justify-content-between align-items-center mb-2 pb-2 border-bottom';
+        div.innerHTML = `<div><strong>${item.name}</strong><br><small>$${item.price} x ${item.qty}</small></div><div><button class="btn btn-sm remove-cart-item" data-index="${idx}"><i class="fas fa-trash-alt"></i></button></div>`;
+        sidebarContainer.appendChild(div);
+      });
+    }
+    if(badge) badge.innerText = totalItems;
+    if(totalSpan) totalSpan.innerText = totalPrice.toFixed(2);
+    document.querySelectorAll('.remove-cart-item').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = parseInt(btn.dataset.index);
+        cart.splice(idx, 1);
+        localStorage.setItem('wo_cart', JSON.stringify(cart));
+        updateCartUI();
+      });
+    });
+  }
+  updateCartUI();
+
+  // Sticky navbar + scroll to top
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if(window.scrollY > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    if(window.scrollY > 500) scrollBtn.classList.add('show');
+    else scrollBtn.classList.remove('show');
+  });
+  document.getElementById('scrollTopBtn')?.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+  // Fade scroll observer
+  const fadeItems = document.querySelectorAll('.fade-scroll');
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
+  fadeItems.forEach(el => observer.observe(el));
+
+  // ----- MODAL ON ADD TO CART (no actual cart addition) -----
+  const modal = new bootstrap.Modal(document.getElementById('updateModal'));
+  const allAddButtons = document.querySelectorAll('.add-to-cart-trigger');
+  allAddButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Show modal instead of adding to cart
+      modal.show();
+    });
+  });
+
+  // Optional: keep cart icon badge but no items added through shop page
+  // (cart can still be cleared from offcanvas, but no new items added)
+  // For consistency, we prevent any accidental storage addition.
+  // Also, if user previously added items from homepage, cart remains unchanged.
+
+  // Active link highlight for Shop page (already active via class)
+  // Smooth scroll for any anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if(href !== "#" && href !== "" && href !== "#!" && href !== "#") {
+        const target = document.querySelector(href);
+        if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      }
+    });
+  });
+</script>
+</body>
+</html>

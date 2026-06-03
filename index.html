@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Marias Handbag - The destination for artisanal women's handbags & purses. Discover timeless luxury crafted in USA. Free shipping & premium leather.">
+  <meta name="keywords" content="luxury handbags, designer purses, leather tote, clutch bags, shoulder bags, USA made">
+  <meta name="author" content="Marias Handbag">
+  <meta name="robots" content="index, follow">
+  <title>Marias Handbag | Artisanal Luxury Handbags</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👜</text></svg>">
+  <!-- Bootstrap 5 + Icons + Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FFFFFF;
+      color: #2B2A28;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, .logo-font {
+      font-family: 'Playfair Display', serif;
+    }
+    :root {
+      --dust-rose: #D4A5A5;
+      --charcoal: #2F2E2C;
+      --warm-cream: #FBF7F2;
+      --olive: #8B7D6B;
+      --shadow-elegant: 0 20px 35px -12px rgba(0,0,0,0.05);
+    }
+    /* custom navbar - minimal and transparent */
+    .navbar {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(0px);
+      transition: all 0.3s;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+    .navbar.scrolled {
+      background: white;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+      padding: 0.5rem 0;
+    }
+    .navbar-brand {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #2F2E2C !important;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: #2F2E2C !important;
+      margin: 0 0.5rem;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-link:hover {
+      color: #D4A5A5 !important;
+    }
+    .cart-icon {
+      position: relative;
+      font-size: 1.2rem;
+    }
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -12px;
+      background: #D4A5A5;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: monospace;
+    }
+    /* HERO FULLWIDTH CAROUSEL */
+    .hero-carousel {
+      margin-top: 72px;
+    }
+    .carousel-item {
+      height: 90vh;
+      min-height: 550px;
+      background-size: cover;
+      background-position: center 30%;
+      position: relative;
+    }
+    .carousel-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 100%);
+    }
+    .hero-content {
+      position: absolute;
+      bottom: 15%;
+      left: 8%;
+      right: auto;
+      max-width: 550px;
+      background: rgba(255,255,245,0.85);
+      backdrop-filter: blur(3px);
+      padding: 2rem 2.5rem;
+      border-radius: 20px;
+      animation: fadeUp 0.9s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: #2F2E2C;
+    }
+    .btn-primary-custom {
+      background: #2F2E2C;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: 0.25s;
+      color: white;
+    }
+    .btn-primary-custom:hover {
+      background: #D4A5A5;
+      transform: translateY(-2px);
+    }
+    /* Section headings */
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: #8B7D6B;
+      letter-spacing: 1px;
+    }
+    /* Category cards - new borderless style */
+    .category-card-new {
+      background: #FDF9F5;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: all 0.35s;
+      cursor: pointer;
+    }
+    .category-card-new:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 30px -12px rgba(0,0,0,0.1);
+    }
+    .category-img-new {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+    .category-card-new:hover .category-img-new {
+      transform: scale(1.03);
+    }
+    /* Product Cards - clean */
+    .product-card-new {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: 0.3s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #F0EBE5;
+    }
+    .product-card-new:hover {
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+      transform: translateY(-5px);
+    }
+    .product-img-new {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .badge-new {
+      background: #D4A5A5;
+      color: #2F2E2C;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 40px;
+    }
+    /* Why choose us */
+    .feature-icon {
+      background: #F4EFEA;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.8rem;
+      color: #D4A5A5;
+    }
+    /* Instagram gallery */
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .insta-item {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+    }
+    .insta-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+    .insta-item:hover img {
+      transform: scale(1.05);
+    }
+    /* FAQ Accordion */
+    .accordion-button:focus {
+      box-shadow: none;
+      border-color: #D4A5A5;
+    }
+    .accordion-button:not(.collapsed) {
+      background: #FBF7F2;
+      color: #2F2E2C;
+    }
+    /* Footer */
+    .footer-custom {
+      background: #1E1C1A;
+      color: #CFC9C4;
+    }
+    /* scroll top */
+    .scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #D4A5A5;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 99;
+      border: none;
+    }
+    .scroll-top.show {
+      opacity: 1;
+    }
+    /* Fade on scroll */
+    .fade-scroll {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.7s;
+    }
+    .fade-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Cart Sidebar Styles */
+    .offcanvas {
+      width: 400px !important;
+    }
+    .remove-cart-item {
+      background: transparent;
+      border: none;
+      color: #999;
+      transition: 0.2s;
+    }
+    .remove-cart-item:hover {
+      color: #D4A5A5;
+    }
+    @media (max-width: 768px) {
+      .hero-content {
+        left: 5%;
+        right: 5%;
+        padding: 1.2rem;
+        bottom: 12%;
+      }
+      .hero-content h1 { font-size: 1.9rem; }
+      .section-title { font-size: 1.8rem; }
+      .offcanvas {
+        width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sticky Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="#">Marias Handbag</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-2">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link cart-icon" href="#" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cartCountBadge" class="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- FULL WIDTH HERO CAROUSEL (Slider with content visible) -->
+<div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="background-image: url('https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover;">
+      <div class="hero-content">
+        <h1>Artistry in Every Stitch</h1>
+        <p class="mb-3">Discover handcrafted leather bags that blend heritage with modern elegance. Made for the discerning woman.</p>
+        <a href="#featured" class="btn btn-primary-custom">Shop Collection →</a>
+      </div>
+    </div>
+    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1602532350069-f1e51a6420ab?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover;">
+      <div class="hero-content">
+        <h1>Timeless Clutches</h1>
+        <p>From boardroom to soiree, our clutches define sophistication. Limited edition designs.</p>
+        <a href="#featured" class="btn btn-primary-custom">Explore Now →</a>
+      </div>
+    </div>
+   
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+
+<!-- Categories Section (Unique Design) -->
+<section class="container py-5 mt-3">
+  <div class="text-center mb-5">
+    <span class="section-sub">Shop by Silhouette</span>
+    <h2 class="section-title">Your Signature Style</h2>
+  </div>
+  <div class="row g-4">
+    <div class="col-md-6 col-lg-3 fade-scroll"><div class="category-card-new"><img src="https://images.unsplash.com/photo-1760624295064-2de890f64524?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="category-img-new" alt="Tote bag" loading="lazy"><div class="p-3 text-center"><h5 class="mb-0">Tote Bags</h5><small>Spacious luxury</small></div></div></div>
+    <div class="col-md-6 col-lg-3 fade-scroll"><div class="category-card-new"><img src="https://images.unsplash.com/photo-1761646238176-b480909e6ba6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="category-img-new" alt="Clutch" loading="lazy"><div class="p-3 text-center"><h5 class="mb-0">Clutches</h5><small>Evening elegance</small></div></div></div>
+    <div class="col-md-6 col-lg-3 fade-scroll"><div class="category-card-new"><img src="https://images.unsplash.com/photo-1517612228538-cefdbc2c01e7?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="category-img-new" alt="Shoulder Bag" loading="lazy"><div class="p-3 text-center"><h5 class="mb-0">Shoulder Bags</h5><small>Effortless chic</small></div></div></div>
+    <div class="col-md-6 col-lg-3 fade-scroll"><div class="category-card-new"><img src="https://images.unsplash.com/photo-1761646238914-2dad041491e2?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="category-img-new" alt="Luxury Purses" loading="lazy"><div class="p-3 text-center"><h5 class="mb-0">Luxury Purses</h5><small>Iconic status</small></div></div></div>
+  </div>
+</section>
+
+<!-- Featured Products Section -->
+<section id="featured" class="container py-5">
+  <div class="text-center mb-5">
+    <span class="section-sub">Bestsellers</span>
+    <h2 class="section-title">Curated for the Modern Muse</h2>
+  </div>
+  <div class="row g-4" id="productGrid">
+    <!-- Products with real handbag images -->
+    <div class="col-md-6 col-lg-3 fade-scroll" data-product='{"id":1,"name":"The Madison Tote","price":495,"img":"https://images.unsplash.com/photo-1589731119540-c4586781dae1?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}'>
+      <div class="product-card-new"><span class="badge-new position-absolute top-0 start-0 m-3">New</span><img src="https://images.unsplash.com/photo-1589731119540-c4586781dae1?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img-new" alt="Madison Tote"><div class="p-3"><h5 class="fw-semibold">The Madison Tote</h5><p class="text-secondary">$495</p><button class="btn w-100 addCartBtn" style="background:#F4EFEA; border-radius:40px;">Add to Cart</button></div></div>
+    </div>
+    <div class="col-md-6 col-lg-3 fade-scroll" data-product='{"id":2,"name":"Athena Clutch","price":290,"img":"https://images.unsplash.com/photo-1761646238287-3a278ecc0c86?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}'>
+      <div class="product-card-new"><span class="badge-new position-absolute top-0 start-0 m-3" style="background:#8B7D6B;">Sale</span><img src="https://images.unsplash.com/photo-1761646238287-3a278ecc0c86?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img-new" alt="Athena Clutch"><div class="p-3"><h5 class="fw-semibold">Athena Clutch</h5><p class="text-secondary">$290</p><button class="btn w-100 addCartBtn" style="background:#F4EFEA; border-radius:40px;">Add to Cart</button></div></div>
+    </div>
+    <div class="col-md-6 col-lg-3 fade-scroll" data-product='{"id":3,"name":"Serena Shoulder","price":425,"img":"https://images.unsplash.com/photo-1544511196-1646449a253b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}'>
+      <div class="product-card-new"><img src="https://images.unsplash.com/photo-1544511196-1646449a253b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img-new" alt="Serena Shoulder"><div class="p-3"><h5 class="fw-semibold">Serena Shoulder</h5><p class="text-secondary">$425</p><button class="btn w-100 addCartBtn" style="background:#F4EFEA; border-radius:40px;">Add to Cart</button></div></div>
+    </div>
+    <div class="col-md-6 col-lg-3 fade-scroll" data-product='{"id":4,"name":"Opulent Purse","price":650,"img":"https://images.unsplash.com/photo-1761646238279-30de81702a97?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}'>
+      <div class="product-card-new"><span class="badge-new position-absolute top-0 start-0 m-3">Limited</span><img src="https://images.unsplash.com/photo-1761646238279-30de81702a97?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="product-img-new" alt="Opulent Purse"><div class="p-3"><h5 class="fw-semibold">Opulent Purse</h5><p class="text-secondary">$650</p><button class="btn w-100 addCartBtn" style="background:#F4EFEA; border-radius:40px;">Add to Cart</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section (Extra) -->
+<section class="py-5 bg-light" style="background: #FBF7F2;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-sub">Why Marias Handbag</span>
+      <h2 class="section-title">The WO Promise</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 text-center fade-scroll"><div class="feature-icon"><i class="fas fa-gem"></i></div><h5>Artisan Craftsmanship</h5><p>Each bag handcrafted by skilled artisans in our Atlanta atelier, using premium leathers.</p></div>
+      <div class="col-md-4 text-center fade-scroll"><div class="feature-icon"><i class="fas fa-leaf"></i></div><h5>Sustainable Luxury</h5><p>Ethically sourced materials & low-waste production. Elegance with conscience.</p></div>
+      <div class="col-md-4 text-center fade-scroll"><div class="feature-icon"><i class="fas fa-truck-fast"></i></div><h5>Free US Shipping</h5><p>Complimentary express shipping & 30-day returns. Dedicated concierge service.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram Gallery Section (Extra) -->
+<section class="container py-5">
+  <div class="text-center mb-4">
+    <span class="section-sub">#WOecommerce</span>
+    <h2 class="section-title">As Seen On Instagram</h2>
+  </div>
+  <div class="insta-grid">
+    <div class="insta-item"><img src="https://images.unsplash.com/photo-1751522925876-79bfeae6fbfb?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="bag style" loading="lazy"></div>
+    <div class="insta-item"><img src="https://images.unsplash.com/photo-1751522917613-68281b131e45?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="luxury handbag" loading="lazy"></div>
+    <div class="insta-item"><img src="http://images.unsplash.com/photo-1751522937993-46b83342398b?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="clutch collection" loading="lazy"></div>
+    <div class="insta-item"><img src="https://images.unsplash.com/photo-1691480288782-142b953cf664?q=80&w=2500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="shoulder bag" loading="lazy"></div>
+    <div class="insta-item"><img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=400" alt="tote" loading="lazy"></div>
+    
+  </div>
+</section>
+
+<!-- FAQ Section (Extra) -->
+<section class="py-5" style="background: #FDF9F5;">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5 fade-scroll">
+        <span class="section-sub">Have Questions?</span>
+        <h2 class="section-title">Frequently Asked</h2>
+        <p>From shipping to care — we're here to help you experience seamless luxury.</p>
+      </div>
+      <div class="col-lg-7 fade-scroll">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Do you ship internationally?</button></h2><div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Currently we ship across the USA with free express shipping. International expansion coming soon — join our waitlist.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">What is your return policy?</button></h2><div id="faq2" class="accordion-collapse collapse"><div class="accordion-body">We offer 30-day hassle-free returns. Items must be unworn with original tags. Free returns for US customers.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Are the bags genuine leather?</button></h2><div id="faq3" class="accordion-collapse collapse"><div class="accordion-body">Yes, 100% premium Italian and American leather. Ethically sourced and vegetable-tanned options.</div></div></div>
+          <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">How to care for my bag?</button></h2><div id="faq4" class="accordion-collapse collapse"><div class="accordion-body">We include a care guide. Use leather conditioner and store in dust bag. We offer complimentary cleaning services for WO members.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About & Contact Section -->
+<section id="about" class="container py-5">
+  <div class="row g-5 align-items-center">
+    <div class="col-md-6 fade-scroll">
+      <img src="https://images.unsplash.com/photo-1691480250099-a63081ecfcb8?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-4 shadow" alt="WO atelier" loading="lazy">
+    </div>
+    <div class="col-md-6 fade-scroll">
+      <span class="section-sub">Our Legacy</span>
+      <h2 class="section-title">Born in Atlanta, Inspired by the World</h2>
+      <p>Marias Handbag was founded by women designers who envisioned a brand that marries classic sophistication with modern functionality. Every handbag is a testament to uncompromising quality, from the hand-stitched handles to the custom hardware. We celebrate the American spirit — bold, elegant, and timeless.</p>
+      <p>Join a community that values true craftsmanship and sustainable luxury. Because your bag is more than an accessory; it's your daily companion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter + Contact (merged) -->
+<section id="contact" class="py-5" style="background: #F4EFEA;">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6 fade-scroll">
+        <div class="p-4 rounded-4 bg-white shadow-sm"><h4>Subscribe to Edit</h4><p>Get early access to new collections, exclusive offers & style notes.</p><div class="input-group"><input type="email" id="newsEmailInput" class="form-control" placeholder="Your email"><button class="btn" id="newsSubBtn" style="background:#2F2E2C; color:white; border-radius:0 40px 40px 0;">Join</button></div><div class="mt-2"><small>No spam, just luxury.</small></div></div>
+      </div>
+      <div class="col-md-6 fade-scroll">
+        <div class="p-4 rounded-4 bg-white shadow-sm"><h4>Concierge Service</h4><form id="contactFormSimple"><input type="text" class="form-control mb-2" placeholder="Name" id="cName"><input type="email" class="form-control mb-2" placeholder="Email" id="cEmail"><textarea rows="2" class="form-control mb-2" placeholder="Message" id="cMsg"></textarea><button type="submit" class="btn w-100" style="background:#2F2E2C; color:white;">Send Inquiry</button></form></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-custom pt-5 pb-3">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><h4 class="text-white">Marias Handbag</h4><p>Luxury handbags crafted with soul. Atlanta, Georgia flagship atelier.</p><div><i class="fab fa-instagram me-3 fs-5"></i><i class="fab fa-facebook me-3 fs-5"></i><i class="fab fa-pinterest me-3 fs-5"></i></div></div>
+      <div class="col-md-2"><h6>Policies</h6><ul class="list-unstyled"><li><a href="/privacy.html" class="text-white-50">Privacy Policy</a></li><li><a href="/terms.html" class="text-white-50">Terms & Conditions</a></li><li><a href="/refund.html" class="text-white-50">Refund Policy</a></li><li><a href="/shipping.html" class="text-white-50">Shipping Policy</a></li></ul></div>
+      <div class="col-md-3"><h6>Contact</h6><p><i class="fas fa-map-marker-alt me-2"></i> 212 Buckhead Ave, Atlanta, GA 30305</p><p><i class="fas fa-phone-alt me-2"></i> +1 (470) 555-2345</p><p><i class="fas fa-envelope me-2"></i> support@mariashandbag.com</p></div>
+      <div class="col-md-3"><h6>Hours</h6><p>Mon-Fri: 10AM–7PM EST<br>Sat: 11AM–5PM</p></div>
+    </div>
+    <hr class="bg-secondary mt-4"><p class="text-center small mb-0">© 2025 Marias Handbag — American Luxury House. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Modal for Checkout -->
+<div class="modal fade" id="checkoutModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 pb-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center py-4">
+        <i class="fas fa-shopping-bag mb-3" style="font-size: 3rem; color: #D4A5A5;"></i>
+        <h4 class="mb-2" id="modalTitle">Coming Soon!</h4>
+        <p class="text-muted" id="modalMessage">Our full checkout experience is launching shortly. Stay tuned for seamless luxury shopping.</p>
+        <button class="btn btn-outline-dark px-4 mt-2" data-bs-dismiss="modal" style="border-radius: 40px;">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Updated Cart Offcanvas with Checkout Button -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar">
+  <div class="offcanvas-header">
+    <h5>Shopping Bag</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    <div id="cartItemsSidebar" class="flex-grow-1"></div>
+    <div class="mt-3 pt-3 border-top">
+      <div class="d-flex justify-content-between fw-bold mb-3">
+        <span>Total:</span>
+        <span>$<span id="cartTotalSidebar">0</span></span>
+      </div>
+      <button class="btn w-100 py-2" id="checkoutBtn" style="background-color: #2F2E2C; color: white; border-radius: 40px;">
+        <i class="fas fa-lock me-2"></i>Checkout
+      </button>
+      <p class="small text-muted text-center mt-2 mb-0">Secure payment • Free shipping on US orders</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // ---------- CART SYSTEM (frontend) ----------
+  let cart = JSON.parse(localStorage.getItem('wo_cart')) || [];
+  
+  function updateCartUI() {
+    const badge = document.getElementById('cartCountBadge');
+    const sidebarContainer = document.getElementById('cartItemsSidebar');
+    const totalSpan = document.getElementById('cartTotalSidebar');
+    let totalItems = 0, totalPrice = 0;
+    
+    if(sidebarContainer) {
+      sidebarContainer.innerHTML = '';
+      if(cart.length === 0) {
+        sidebarContainer.innerHTML = '<p class="text-muted text-center py-4">Your cart is empty.</p>';
+      } else {
+        cart.forEach((item, idx) => {
+          totalItems += item.qty;
+          totalPrice += item.price * item.qty;
+          const div = document.createElement('div');
+          div.className = 'd-flex justify-content-between align-items-center mb-3 pb-2 border-bottom';
+          div.innerHTML = `
+            <div>
+              <strong>${item.name}</strong>
+              <br>
+              <small class="text-muted">$${item.price} x ${item.qty}</small>
+            </div>
+            <div>
+              <button class="btn btn-sm remove-cart-item" data-index="${idx}">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          `;
+          sidebarContainer.appendChild(div);
+        });
+      }
+    }
+    
+    if(badge) badge.innerText = totalItems;
+    if(totalSpan) totalSpan.innerText = totalPrice.toFixed(2);
+    
+    document.querySelectorAll('.remove-cart-item').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = parseInt(btn.dataset.index);
+        cart.splice(idx, 1);
+        localStorage.setItem('wo_cart', JSON.stringify(cart));
+        updateCartUI();
+      });
+    });
+  }
+  
+  function addToCart(product) {
+    const existing = cart.find(i => i.id == product.id);
+    if(existing) existing.qty += 1;
+    else cart.push({ id: product.id, name: product.name, price: product.price, qty: 1, img: product.img });
+    localStorage.setItem('wo_cart', JSON.stringify(cart));
+    updateCartUI();
+    const toastMsg = document.createElement('div'); 
+    toastMsg.className = 'position-fixed bottom-0 start-50 translate-middle-x bg-dark text-white px-3 py-2 rounded-pill mb-3 z-3'; 
+    toastMsg.innerText = `${product.name} added to cart`; 
+    document.body.appendChild(toastMsg); 
+    setTimeout(()=>toastMsg.remove(), 1800);
+  }
+  
+  document.querySelectorAll('.addCartBtn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const card = btn.closest('[data-product]');
+      if(card) {
+        const prodData = JSON.parse(card.getAttribute('data-product'));
+        addToCart(prodData);
+      } else {
+        const parentDiv = btn.closest('.product-card-new');
+        const name = parentDiv.querySelector('h5').innerText;
+        const priceText = parentDiv.querySelector('.text-secondary').innerText.replace('$','');
+        const img = parentDiv.querySelector('img').src;
+        addToCart({ id: Date.now() + Math.random(), name: name, price: parseInt(priceText), qty:1, img:img });
+      }
+    });
+  });
+  
+  updateCartUI();
+  
+  // Checkout button handler
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+  const modalTitle = document.getElementById('modalTitle');
+  const modalMessage = document.getElementById('modalMessage');
+  
+  if(checkoutBtn) {
+    checkoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if(cart.length === 0) {
+        modalTitle.innerText = 'Your Cart is Empty';
+        modalMessage.innerText = 'Add some beautiful handbags to your cart before checking out.';
+      } else {
+        modalTitle.innerText = 'Coming Soon!';
+        modalMessage.innerText = 'Our full checkout experience is launching shortly. Stay tuned for seamless luxury shopping.';
+      }
+      checkoutModal.show();
+    });
+  }
+  
+  // Sticky navbar
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if(window.scrollY > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    if(window.scrollY > 500) scrollBtn.classList.add('show');
+    else scrollBtn.classList.remove('show');
+  });
+  
+  document.getElementById('scrollTopBtn').addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+  
+  // Fade scroll observer
+  const fadeItems = document.querySelectorAll('.fade-scroll');
+  const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
+  fadeItems.forEach(el => obs.observe(el));
+  
+  // Newsletter & contact
+  document.getElementById('newsSubBtn')?.addEventListener('click', () => { let email = document.getElementById('newsEmailInput').value; if(email) alert('Thank you! You\'re now part of the WO inner circle.'); else alert('Please enter email.'); });
+  document.getElementById('contactFormSimple')?.addEventListener('submit', (e) => { e.preventDefault(); alert('Your message has been sent to our concierge team.'); e.target.reset(); });
+  
+  // smooth nav
+  document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(ev) {
+      const targetId = this.getAttribute('href');
+      if(targetId && targetId !== '#') { ev.preventDefault(); document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>

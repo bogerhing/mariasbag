@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Marias Handbag Terms & Conditions - Read our terms of use, purchase policies, and legal agreements for luxury handbags.">
+  <meta name="keywords" content="terms and conditions, Marias Handbag, terms of service, purchase policy">
+  <meta name="author" content="Marias Handbag">
+  <title>Marias Handbag | Terms & Conditions</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👜</text></svg>">
+  <!-- Bootstrap 5 + Icons + Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FFFFFF;
+      color: #2B2A28;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, .logo-font {
+      font-family: 'Playfair Display', serif;
+    }
+    :root {
+      --dust-rose: #D4A5A5;
+      --charcoal: #2F2E2C;
+      --warm-cream: #FBF7F2;
+      --olive: #8B7D6B;
+    }
+    /* Navbar (identical) */
+    .navbar {
+      background: rgba(255,255,255,0.96);
+      transition: all 0.3s;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+    .navbar.scrolled {
+      background: white;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+      padding: 0.5rem 0;
+    }
+    .navbar-brand {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #2F2E2C !important;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: #2F2E2C !important;
+      margin: 0 0.5rem;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: #D4A5A5 !important;
+    }
+    .cart-icon {
+      position: relative;
+      font-size: 1.2rem;
+    }
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -12px;
+      background: #D4A5A5;
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Page header */
+    .terms-hero {
+      background: linear-gradient(115deg, #FDF9F5 0%, #F4EFEA 100%);
+      padding: 130px 0 60px;
+      margin-top: 68px;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: #8B7D6B;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+    .terms-content {
+      background: white;
+      border-radius: 28px;
+      padding: 2rem 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+      border: 1px solid #F0EBE5;
+    }
+    .terms-content h2 {
+      font-size: 1.6rem;
+      margin-top: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .terms-content h3 {
+      font-size: 1.3rem;
+      margin-top: 1.5rem;
+      font-weight: 500;
+    }
+    .terms-content p {
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      color: #3D3A37;
+    }
+    .terms-content ul {
+      margin-bottom: 1rem;
+      padding-left: 1.2rem;
+    }
+    .terms-content li {
+      margin-bottom: 0.5rem;
+    }
+    .footer-custom {
+      background: #1E1C1A;
+      color: #CFC9C4;
+    }
+    .scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #D4A5A5;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 99;
+      border: none;
+    }
+    .scroll-top.show {
+      opacity: 1;
+    }
+    .fade-scroll {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.7s;
+    }
+    .fade-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      .section-title { font-size: 1.9rem; }
+      .terms-hero { padding: 100px 0 40px; }
+      .terms-content { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar (same as all pages) -->
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/index.html">Marias Handbag</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-2">
+        <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link cart-icon" href="#" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cartCountBadge" class="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<section class="terms-hero">
+  <div class="container">
+    <div class="fade-scroll">
+      <span class="section-sub">Legal Agreement</span>
+      <h1 class="display-5 fw-bold">Terms & Conditions</h1>
+      <p class="lead mx-auto" style="max-width: 650px;">Last updated: April 6, 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- Terms & Conditions Content -->
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 fade-scroll">
+      <div class="terms-content">
+        <p class="lead fw-semibold">Welcome to Marias Handbag. By accessing or using our website, you agree to be bound by these Terms & Conditions. Please read them carefully before placing any order.</p>
+        
+        <h2>1. General Information</h2>
+        <p>Marias Handbag ("we", "us", "our") operates this website. These Terms govern your use of our site and purchase of products. We reserve the right to update these Terms at any time. Changes become effective upon posting. Your continued use constitutes acceptance.</p>
+
+        <h2>2. Eligibility</h2>
+        <p>By using our site, you represent that you are at least 18 years old or accessing under parental supervision. You agree to provide accurate, current, and complete information during checkout and account registration.</p>
+
+        <h2>3. Products & Pricing</h2>
+        <p>All products displayed on our site are subject to availability. We strive to display colors and details accurately, but slight variations may occur. Prices are listed in USD and do not include applicable taxes or shipping fees, which will be added at checkout. We reserve the right to change prices without prior notice.</p>
+
+        <h2>4. Orders & Payment</h2>
+        <p>When you place an order, you receive an email confirmation. We reserve the right to cancel any order due to suspected fraud, pricing errors, or product unavailability. Payments are processed via secure third-party gateways (Stripe, PayPal). You warrant that your payment information is valid and that you are authorized to use the payment method.</p>
+
+        <h2>5. Shipping & Delivery</h2>
+        <p>We ship within the United States via UPS, FedEx, and USPS. Estimated delivery times are provided at checkout but are not guaranteed. Risk of loss passes to you upon delivery. We are not responsible for delays caused by carriers or customs. Please review our Shipping Policy for more details.</p>
+
+        <h2>6. Returns & Refunds</h2>
+        <p>We accept returns within 30 days of delivery for unworn, unused items with original tags and packaging. Final sale items are non-returnable. Refunds are issued to the original payment method within 7-10 business days after inspection. Please refer to our Refund Policy for complete instructions.</p>
+
+        <h2>7. Intellectual Property</h2>
+        <p>All content on this website — including text, graphics, logos, product images, and software — is the property of Marias Handbag and protected by US and international copyright laws. You may not reproduce, distribute, or exploit any content without our express written permission.</p>
+
+        <h2>8. User Accounts</h2>
+        <p>You are responsible for maintaining the confidentiality of your account credentials. Notify us immediately of any unauthorized use. We are not liable for losses due to compromised accounts.</p>
+
+        <h2>9. Prohibited Activities</h2>
+        <p>You agree not to:</p>
+        <ul>
+          <li>Use the site for any illegal purpose or violate any laws.</li>
+          <li>Interfere with the site’s security features or transmit malware.</li>
+          <li>Scrape, copy, or harvest user data without permission.</li>
+          <li>Impersonate another person or entity.</li>
+        </ul>
+
+        <h2>10. Third-Party Links</h2>
+        <p>Our site may contain links to external websites (e.g., social media, payment processors). We are not responsible for the content or practices of those sites.</p>
+
+        <h2>11. Disclaimer of Warranties</h2>
+        <p>Our website and products are provided "as is" without warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not guarantee that the site will be error-free, secure, or uninterrupted.</p>
+
+        <h2>12. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, Marias Handbag and its affiliates shall not be liable for any indirect, incidental, or consequential damages arising from your use of our site or products, even if advised of the possibility. Our total liability shall not exceed the amount you paid for the product in question.</p>
+
+        <h2>13. Indemnification</h2>
+        <p>You agree to indemnify and hold Marias Handbag harmless from any claims, damages, or expenses arising from your violation of these Terms or infringement of any third-party rights.</p>
+
+        <h2>14. Governing Law & Dispute Resolution</h2>
+        <p>These Terms shall be governed by the laws of the State of Georgia, without regard to conflict of law principles. Any dispute arising from these Terms or your purchase shall be resolved exclusively in the state or federal courts located in Fulton County, Georgia. You consent to personal jurisdiction there.</p>
+
+        <h2>15. SMS/Text Messaging (if applicable)</h2>
+        <p>By providing your phone number, you agree to receive transactional and marketing SMS messages. Standard message and data rates may apply. You may opt out at any time by replying STOP.</p>
+
+        <h2>16. Severability</h2>
+        <p>If any provision of these Terms is found to be unenforceable, the remaining provisions shall remain in full force and effect.</p>
+
+        <h2>17. Contact Us</h2>
+        <p>If you have any questions about these Terms, please contact us:</p>
+        <p>
+          Marias Handbag Legal Department<br>
+          212 Buckhead Avenue, Suite 100<br>
+          Atlanta, GA 30305, USA<br>
+          Email: <strong>legal@mariashandbag.com</strong><br>
+          Phone: +1 (470) 555-2345
+        </p>
+        <hr class="my-4">
+        <p class="small text-secondary">By continuing to use our website, you acknowledge that you have read, understood, and agree to these Terms & Conditions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer (exactly same as homepage) -->
+<footer class="footer-custom pt-5 pb-3">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><h4 class="text-white">Marias Handbag</h4><p>Luxury handbags crafted with soul. Atlanta, Georgia flagship atelier.</p><div><i class="fab fa-instagram me-3 fs-5"></i><i class="fab fa-facebook me-3 fs-5"></i><i class="fab fa-pinterest me-3 fs-5"></i></div></div>
+      <div class="col-md-2"><h6>Policies</h6><ul class="list-unstyled"><li><a href="/privacy.html" class="text-white-50">Privacy Policy</a></li><li><a href="/terms.html" class="text-white-50">Terms & Conditions</a></li><li><a href="/refund.html" class="text-white-50">Refund Policy</a></li><li><a href="/shipping.html" class="text-white-50">Shipping Policy</a></li></ul></div>
+      <div class="col-md-3"><h6>Contact</h6><p><i class="fas fa-map-marker-alt me-2"></i> 212 Buckhead Ave, Atlanta, GA 30305</p><p><i class="fas fa-phone-alt me-2"></i> +1 (470) 555-2345</p><p><i class="fas fa-envelope me-2"></i> support@mariashandbag.com</p></div>
+      <div class="col-md-3"><h6>Hours</h6><p>Mon-Fri: 10AM–7PM EST<br>Sat: 11AM–5PM</p></div>
+    </div>
+    <hr class="bg-secondary mt-4"><p class="text-center small mb-0">© 2025 Marias Handbag — American Luxury House. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Cart Offcanvas (preserved for consistency) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar">
+  <div class="offcanvas-header"><h5>Shopping Bag</h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
+  <div class="offcanvas-body"><div id="cartItemsSidebar"></div><div class="mt-3 fw-bold text-end">Total: $<span id="cartTotalSidebar">0</span></div></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Cart system (maintained for cart icon badge)
+  let cart = JSON.parse(localStorage.getItem('wo_cart')) || [];
+  function updateCartUI() {
+    const badge = document.getElementById('cartCountBadge');
+    const sidebarContainer = document.getElementById('cartItemsSidebar');
+    const totalSpan = document.getElementById('cartTotalSidebar');
+    let totalItems = 0, totalPrice = 0;
+    if(sidebarContainer) {
+      sidebarContainer.innerHTML = '';
+      if(cart.length === 0) sidebarContainer.innerHTML = '<p class="text-muted">Your cart is empty.</p>';
+      cart.forEach((item, idx) => {
+        totalItems += item.qty;
+        totalPrice += item.price * item.qty;
+        const div = document.createElement('div');
+        div.className = 'd-flex justify-content-between align-items-center mb-2 pb-2 border-bottom';
+        div.innerHTML = `<div><strong>${item.name}</strong><br><small>$${item.price} x ${item.qty}</small></div><div><button class="btn btn-sm remove-cart-item" data-index="${idx}"><i class="fas fa-trash-alt"></i></button></div>`;
+        sidebarContainer.appendChild(div);
+      });
+    }
+    if(badge) badge.innerText = totalItems;
+    if(totalSpan) totalSpan.innerText = totalPrice.toFixed(2);
+    document.querySelectorAll('.remove-cart-item').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = parseInt(btn.dataset.index);
+        cart.splice(idx, 1);
+        localStorage.setItem('wo_cart', JSON.stringify(cart));
+        updateCartUI();
+      });
+    });
+  }
+  updateCartUI();
+
+  // Sticky navbar + scroll top
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if(window.scrollY > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    if(window.scrollY > 500) scrollBtn.classList.add('show');
+    else scrollBtn.classList.remove('show');
+  });
+  document.getElementById('scrollTopBtn')?.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+  // Fade scroll observer
+  const fadeItems = document.querySelectorAll('.fade-scroll');
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
+  fadeItems.forEach(el => observer.observe(el));
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if(href !== "#" && href !== "" && href !== "#!") {
+        const target = document.querySelector(href);
+        if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      }
+    });
+  });
+</script>
+</body>
+</html>
